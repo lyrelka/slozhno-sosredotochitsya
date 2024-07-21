@@ -85,10 +85,6 @@
   border: 1px solid transparent;
 }
 
-.header__theme-menu-button:active {
-  border: none;
-}
-
 .header__theme-menu-button:hover {
   border: 1px solid var(--hover-color, #FF007066);
 }
@@ -212,10 +208,6 @@
 
 .secondlink::after {
   content: "показал";
-}
-
-.content__list-link:active {
-  border: none;
 }
 
 .content__list-link:hover {
