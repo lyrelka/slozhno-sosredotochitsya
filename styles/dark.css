@@ -17,6 +17,7 @@
   --accent-bg-color: #FF0070;
   --accent-color: #000028;
   --decor-color: #FF0070;
+  --hover-color: #FF007066;
   --bg-img: url(../images/cover-image-dark.png);
 }
 
@@ -30,6 +31,7 @@
     --accent-bg-color: #FF0070;
     --accent-color: #000028;
     --decor-color: #FF0070;
+    --hover-color: #FF007066;
     --bg-img: url(../images/cover-image-dark.png);
     }
 }
