@@ -12,6 +12,8 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  justify-items: end;
 }
 
 @media (min-width: 768px) {
@@ -61,7 +63,6 @@
 
 .header__decoration::after {
   content: "";
-  align-self: center;
   margin-block-start: 2px;
   height: 9px;
   width: 9px;
@@ -94,22 +95,22 @@
 }
 
 .header__theme-menu-list {
-  align-self: center;
-  justify-self: end;
   display: flex;
   flex-direction: column;
-  align-items: end;
   gap: 10px;
 }
 
 @media (min-width: 1024px) {
   .header__theme-menu-list {
-    align-self: start;
-    justify-self: center;
     flex-direction: row;
     margin-inline-start: 20px;
     justify-content: center;
     align-items: start;
+  }
+
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
   }
 }
 
@@ -137,6 +138,7 @@
 }
 
 .header .big-heading {
+  justify-self: start;
   text-shadow: 4px 4px 0 var(--shadow);
 }
 
@@ -147,7 +149,6 @@
 }
 
 .cover__text-container {
-  align-self: center;
   justify-self: end;
   width: 100%;
   font-weight: bold;
@@ -160,15 +161,16 @@
   }
 }
 
-.cover__text-container,
-.content__list-heading,
-.content__list-text-heading {
+.accent-area {
   background-color: var(--accent-bg-color, #FF0070);
   color: var(--accent-color, #000028);
 }
 
 .content__list {
   margin-block-end: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .content__list-link {
@@ -203,16 +205,16 @@
 }
 
 @media (min-width: 768px) {
-  .two-columns {
+  .content-aside {
     display: flex;
     gap: 20px;
   }
 
-  .two-columns .content__heading {
+  .content-aside .content__heading {
     min-width: 31dvw;
   }
 
-  .three-columns-of-content .content__heading {
+  .content-columns .content__heading {
     width: 29dvw;
   }
 
@@ -222,7 +224,7 @@
 }
 
 @media (min-width: 1024px) {
-  .three-columns-of-content .content__list {
+  .content-columns .content__list {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
@@ -231,28 +233,29 @@
 
 .content__heading {
   margin-block-end: 20px;
+  color: var(--heading-color, #FF0070);
 }
 
-.content__list .content__list-text:not(last-of-child) {
-  margin-block-end: 10px;
+.content__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.content__list-heading,
-.content__list-text-heading {
+.content__list-heading {
   font-size: 18px;
-  margin-block-end: 10px;
 }
 
-.content__list > .content__list-heading {
+.content__container > .content__list-heading {
   margin-block-end: 20px;
 }
 
-.content__list .content__list-item:not(:last-child) {
-  margin-block-end: 20px;
-}
-
-.content__list-text-heading {
+h4.content__list-heading {
   font-weight: normal;
+}
+
+.showcase > .content__list-heading {
+  margin-block-end: 10px;
 }
 
 @media (min-width: 768px) {
@@ -307,6 +310,7 @@
 }
 
 .footer {
+  height: calc(100dvh - 20px);
   margin-block-start: 40px;
   min-height: 650px;
   display: flex;
@@ -319,6 +323,7 @@
   .footer {
     margin-block-start: 80px;
     min-height: 980px;
+    height: calc(100dvh - 40px);
   }
 }
 
